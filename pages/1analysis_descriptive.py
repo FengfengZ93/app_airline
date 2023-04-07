@@ -8,6 +8,10 @@ import plotly.subplots as sp
 import plotly.graph_objs as go
 
 df = load_data()
+num_cols = ['Age', 'Flight Distance', 'Seat comfort', 'Departure/Arrival time convenient',
+                               'Food and drink','Gate location', 'Inflight wifi service', 'Inflight entertainment', 
+                               'Online support', 'Ease of Online booking', 'On-board service', 'Leg room service', 
+                               'Baggage handling', 'Checkin service']
 
 columns = ['Class', 'Customer Type', 'Gender', 'Satisfaction']
 
@@ -25,4 +29,8 @@ st.plotly_chart(fig)
 
 fig = px.scatter(df, x="Arrival Delay in Minutes", y="Departure Delay in Minutes")
 st.plotly_chart(fig)
+
+for i in num_cols:
+    fig = px.violin(df, x="Satisfaction", y=i, box=True)
+    st.plotly_chart(fig)
 
