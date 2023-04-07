@@ -27,7 +27,7 @@ for i, trace in enumerate(traces):
 fig.update_layout(title='Pie Charts')
 st.plotly_chart(fig)
 
-fig = px.scatter(df, x="Arrival Delay in Minutes", y="Departure Delay in Minutes")
+fig = px.scatter(df, x="Flight Distance", y="Arrival Delay in Minutes")
 st.plotly_chart(fig)
 
 for i in num_cols:
