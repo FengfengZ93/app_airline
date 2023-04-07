@@ -25,9 +25,11 @@ for i, trace in enumerate(traces):
     fig.add_trace(trace, 1, i+1)
 
 fig.update_layout(title='Pie Charts')
+st.markdown("# Qualitative data analysis")
 st.plotly_chart(fig)
 
 fig = px.scatter(df, x="Flight Distance", y="Arrival Delay in Minutes")
+st.markdown("# Quantitative data analysis")
 st.plotly_chart(fig)
 
 for i in num_cols:
